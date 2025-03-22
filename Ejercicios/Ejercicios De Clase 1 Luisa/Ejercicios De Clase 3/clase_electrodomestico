@@ -1,0 +1,37 @@
+class Electrodomestico:
+    def __init__(self, marca, modelo, consumoEnergetico):
+        self.marca = marca
+        self.modelo = modelo
+        self.consumoEnergetico = consumoEnergetico
+
+    def encender(self):
+        pass
+
+class Lavadora(Electrodomestico):
+    def __init__(self, marca, modelo, consumoEnergetico, capacidad):
+        super().__init__(marca, modelo, consumoEnergetico)
+        self.capacidad = capacidad
+
+    def encender(self):
+        self.iniciarCicloDeLavado()
+
+    def iniciarCicloDeLavado(self):
+        print(f"La lavadora {self.marca} modelo {self.modelo} está iniciando el ciclo de lavado.")
+
+class Refrigerador(Electrodomestico):
+    def __init__(self, marca, modelo, consumoEnergetico, tieneCongelador):
+        super().__init__(marca, modelo, consumoEnergetico)
+        self.tieneCongelador = tieneCongelador
+
+    def encender(self):
+        self.regularTemperatura()
+
+    def regularTemperatura(self):
+        print(f"El refrigerador {self.marca} modelo {self.modelo} está regulando la temperatura.")
+
+
+lavadora = Lavadora("LG", "T1234", "A++", 8)
+refrigerador = Refrigerador("Samsung", "R5678", "A+", True)
+
+lavadora.encender()
+refrigerador.encender()

@@ -1,0 +1,42 @@
+class Producto:
+    def __init__(self):
+        self.nombre = input("Ingrese el nombre del producto: ")
+        while True:
+            try:
+                self.precio = float(input("Ingrese el precio del producto: "))
+                break
+            except ValueError:
+                print("Por favor, ingrese un precio válido.")
+        while True:
+            try:
+                self.cantidadDisponible = int(input("Ingrese la cantidad disponible del producto: "))
+                break
+            except ValueError:
+                print("Por favor, ingrese una cantidad válida.")
+
+    def obtener_nombre(self):
+        return self.nombre
+
+    def establecer_nombre(self, nombre):
+        self.nombre = nombre
+
+    def obtener_precio(self):
+        return self.precio
+
+    def establecer_precio(self, precio):
+        self.precio = precio
+
+    def obtener_cantidadDisponible(self):
+        return self.cantidadDisponible
+
+    def establecer_cantidadDisponible(self, cantidadDisponible):
+        self.cantidadDisponible = cantidadDisponible
+
+    def calcularTotal(self, cantidad):
+        return self.precio * cantidad
+
+
+producto = Producto()
+cantidad = int(input("Ingrese la cantidad que desea comprar: "))
+total = producto.calcularTotal(cantidad)
+print(f"El total a pagar por {cantidad} unidades de {producto.obtener_nombre()} es: {total}")

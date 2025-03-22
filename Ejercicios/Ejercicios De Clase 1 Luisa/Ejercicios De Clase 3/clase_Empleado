@@ -1,0 +1,37 @@
+class Empleado:
+    def __init__(self, nombre, salario, departamento):
+        self.nombre = nombre
+        self.salario = salario
+        self.departamento = departamento
+
+    def trabajar(self):
+        pass
+
+class Gerente(Empleado):
+    def __init__(self, nombre, salario, departamento, equipo):
+        super().__init__(nombre, salario, departamento)
+        self.equipo = equipo
+
+    def trabajar(self):
+        self.supervisarAEquipo()
+
+    def supervisarAEquipo(self):
+        print(f"{self.nombre} está supervisando a su equipo.")
+
+class Desarrollador(Empleado):
+    def __init__(self, nombre, salario, departamento, lenguajeDeProgramacion):
+        super().__init__(nombre, salario, departamento)
+        self.lenguajeDeProgramacion = lenguajeDeProgramacion
+
+    def trabajar(self):
+        self.escribirCodigo()
+
+    def escribirCodigo(self):
+        print(f"{self.nombre} está escribiendo código en {self.lenguajeDeProgramacion}.")
+
+
+gerente = Gerente("Ana", 50000, "Ventas", ["Juan", "Maria"])
+desarrollador = Desarrollador("Luis", 40000, "IT", "Python")
+
+gerente.trabajar()
+desarrollador.trabajar()

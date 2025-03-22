@@ -1,0 +1,30 @@
+class Usuario:
+    def __init__(self, nombreDeUsuario, contrasena):
+        self.nombreDeUsuario = nombreDeUsuario
+        self.contrasena = contrasena
+
+    def iniciarSesion(self, nombreDeUsuario, contrasena):
+        if self.nombreDeUsuario == nombreDeUsuario and self.contrasena == contrasena:
+            print("Inicio de sesión exitoso.")
+        else:
+            print("Credenciales incorrectas.")
+
+class Administrador(Usuario):
+    def gestionarUsuarios(self):
+        print(f"El administrador {self.nombreDeUsuario} está gestionando usuarios.")
+
+class Cliente(Usuario):
+    def realizarCompra(self):
+        print(f"El cliente {self.nombreDeUsuario} está realizando una compra.")
+
+
+admin = Administrador("admin123", "adminpass")
+cliente = Cliente("cliente123", "clientepass")
+
+
+admin.iniciarSesion("admin123", "adminpass")
+cliente.iniciarSesion("cliente123", "clientepass")
+
+
+admin.gestionarUsuarios()
+cliente.realizarCompra()

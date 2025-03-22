@@ -1,0 +1,26 @@
+class Rectangulo:
+    def __init__(self):
+        while True:
+            try:
+                self.base = float(input("Ingrese la base del rectángulo: "))
+                break
+            except ValueError:
+                print("Por favor, ingrese un valor válido para la base.")
+        
+        while True:
+            try:
+                self.altura = float(input("Ingrese la altura del rectángulo: "))
+                break
+            except ValueError:
+                print("Por favor, ingrese un valor válido para la altura.")
+
+    def calcular_area(self):
+        return self.base * self.altura
+
+    def calcular_perimetro(self):
+        return 2 * (self.base + self.altura)
+
+
+rectangulo = Rectangulo()
+print(f"Área del rectángulo: {rectangulo.calcular_area()}")
+print(f"Perímetro del rectángulo: {rectangulo.calcular_perimetro()}")

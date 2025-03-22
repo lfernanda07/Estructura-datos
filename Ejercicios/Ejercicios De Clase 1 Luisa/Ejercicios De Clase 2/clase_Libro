@@ -1,0 +1,57 @@
+class Libro:
+    def __init__(self, titulo=None, autor=None, genero=None, añoDePublicacion=None):
+        if titulo is None:
+            self.titulo = input("Ingrese el título del libro: ")
+        else:
+            self.titulo = titulo
+
+        if autor is None:
+            self.autor = input("Ingrese el autor del libro: ")
+        else:
+            self.autor = autor
+
+        if genero is None:
+            self.genero = input("Ingrese el género del libro: ")
+        else:
+            self.genero = genero
+
+        if añoDePublicacion is None:
+            while True:
+                try:
+                    self.añoDePublicacion = int(input("Ingrese el año de publicación del libro: "))
+                    break
+                except ValueError:
+                    print("Por favor, ingrese un año válido.")
+        else:
+            self.añoDePublicacion = añoDePublicacion
+
+    def obtener_titulo(self):
+        return self.titulo
+
+    def establecer_titulo(self, titulo):
+        self.titulo = titulo
+
+    def obtener_autor(self):
+        return self.autor
+
+    def establecer_autor(self, autor):
+        self.autor = autor
+
+    def obtener_genero(self):
+        return self.genero
+
+    def establecer_genero(self, genero):
+        self.genero = genero
+
+    def obtener_añoDePublicacion(self):
+        return self.añoDePublicacion
+
+    def establecer_añoDePublicacion(self, añoDePublicacion):
+        self.añoDePublicacion = añoDePublicacion
+
+    def mostrarDetalles(self):
+        print(f"Título: {self.titulo}, Autor: {self.autor}, Género: {self.genero}, Año de Publicación: {self.añoDePublicacion}")
+
+libro = Libro()
+libro.mostrarDetalles()
+

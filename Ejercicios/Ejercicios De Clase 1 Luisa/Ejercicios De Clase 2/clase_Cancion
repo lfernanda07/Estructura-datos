@@ -1,0 +1,38 @@
+class Cancion:
+    def __init__(self):
+        self.titulo = input("Ingrese el título de la canción: ")
+        self.artista = input("Ingrese el artista de la canción: ")
+        self.album = input("Ingrese el álbum de la canción: ")
+        self.duracion = float(input("Ingrese la duración de la canción (en minutos): "))
+
+    def obtener_titulo(self):
+        return self.titulo
+
+    def establecer_titulo(self, titulo):
+        self.titulo = titulo
+
+    def obtener_artista(self):
+        return self.artista
+
+    def establecer_artista(self, artista):
+        self.artista = artista
+
+    def obtener_album(self):
+        return self.album
+
+    def establecer_album(self, album):
+        self.album = album
+
+    def obtener_duracion(self):
+        return self.duracion
+
+    def establecer_duracion(self, duracion):
+        self.duracion = duracion
+
+    def reproducir(self):
+        print(f"Reproduciendo '{self.titulo}' de {self.artista} del álbum '{self.album}'. Duración: {self.duracion} minutos.")
+
+
+cancion = Cancion()
+cancion.reproducir()
+

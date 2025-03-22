@@ -1,0 +1,35 @@
+class Persona:
+    def __init__(self):
+        self.nombre = input("Ingrese su nombre: ")
+        while True:
+            try:
+                self.edad = int(input("Ingrese su edad: "))
+                break
+            except ValueError:
+                print("Por favor, ingrese una edad válida.")
+        self.genero = input("Ingrese su género: ")
+
+    def obtener_nombre(self):
+        return self.nombre
+
+    def establecer_nombre(self, nombre):
+        self.nombre = nombre
+
+    def obtener_edad(self):
+        return self.edad
+
+    def establecer_edad(self, edad):
+        self.edad = edad
+
+    def obtener_genero(self):
+        return self.genero
+
+    def establecer_genero(self, genero):
+        self.genero = genero
+
+    def presentarse(self):
+        print(f"Hola, me llamo {self.nombre}, tengo {self.edad} años y soy {self.genero}.")
+
+
+persona = Persona()
+persona.presentarse()
