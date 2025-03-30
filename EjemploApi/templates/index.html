@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Atención al Cliente</title>
+</head>
+<body>
+    <h1>Sistema de Atención al Cliente</h1>
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form action="/turno/" method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="document">Documento:</label>
+        <input type="text" id="document" name="document" required><br><br>
+
+        <label for="service_type">Tipo de Atención:</label>
+        <select id="service_type" name="service_type" required>
+            <option value="duda">Duda</option>
+            <option value="asesor">Asesor</option>
+            <option value="caja">Caja</option>
+            <option value="otros">Otros</option>
+        </select><br><br>
+
+        <label for="age">Edad:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="priority">¿Prioridad?</label>
+        <input type="checkbox" id="priority" name="priority"><br><br>
+
+        <button type="submit">Agregar Turno</button>
+    </form>
+</body>
+</html>
